@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron ./build/index.js",
+    "build": "npx tsc",
     "watch": "npx nodemon" 
   },
   "author": "Jimy Houlbrook",
