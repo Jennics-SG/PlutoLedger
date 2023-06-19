@@ -1,0 +1,6 @@
+{
+    "watch": ["src", "html", "css"],
+    "ext": ".ts,.js,.html,.css",
+    "ignore": [],
+    "exec": "npx tsc && electron ./build/index.js"
+}
