@@ -1,0 +1,41 @@
+#conf{
+    padding-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#calc{
+    padding-top: 100px;
+    display: flex;
+}
+
+#input{
+    flex: 50%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#input input{
+    padding: 2.5%;
+    height: 30px;
+}
+
+#flexBreak{
+    flex-basis: 100%;
+    height: 0;
+}
+
+#saveButton{
+    padding: 1%;
+    margin-top: 5%;
+    background-color: #1C6C78;
+    border: 5px solid #235F68;
+}
+
+#saveButton:hover{
+    background-color: #235F68;
+    border-color: #1c6c78;
+}

@@ -3,8 +3,13 @@ import { app, BrowserWindow } from 'electron';
 // Create window that loads specific file
 const createWindow = () : void => {
     const win : BrowserWindow = new BrowserWindow({
-        width: 1000,
-        height: 600
+        // Allow for node integration on frontend
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false,
+        },
+        width: 750,
+        height: 400
     });
 
     win.loadFile('../html/index.html');

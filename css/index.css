@@ -1,0 +1,29 @@
+h1{
+    text-align: center;
+    padding: 25px;
+}
+
+#nav{
+    display: flex;
+    justify-content: center;
+}
+
+#nav a{
+    text-decoration: none;
+    color: white;
+    flex: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 150px;
+    height: 150px;
+    background-color: #1C6C78;
+    border: 10px solid #235F68;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav a:hover{
+    background-color: #235F68;
+    border-color: #1C6C78;
+}

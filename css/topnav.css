@@ -1,0 +1,19 @@
+#topnav{
+    display: flex;
+    flex-direction: row;
+    background-color: #1C6C78;
+    width: 100%;
+    margin: auto;
+}
+
+#topnav a{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+#topnav a:hover{
+    background-color: #235F68;
+}
