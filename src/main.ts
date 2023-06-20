@@ -3,7 +3,8 @@ import * as fs from 'fs';
 // Type for saved data
 type Data = {
     hoursWorked: number,
-    money: number
+    money: number,
+    tipPerHour: number
 }
 
 // Function wrapper that runs once DOM content is loaded
@@ -33,6 +34,10 @@ const onReady = () : void => {
     const saveButton = <HTMLElement> document.getElementById("saveButton");
 
     saveButton.addEventListener('click', () : void => saveInfo(data));
+
+    // Listener for Employee hours input
+    const empHoursIpt = <HTMLInputElement> document.getElementById("empHoursInput");
+    empHoursIpt.addEventListener('input', () : void => displayMoneyOwed(data, empHoursIpt));
 }
 
 const showCalc = (calc : HTMLElement, conf : HTMLElement) : void => {
@@ -64,6 +69,10 @@ const saveInfo = (data : Data) : void => {
     data.hoursWorked = allHours;
     data.money = money;
 
+    data.tipPerHour = getTipPerHour(allHours, money);
+
+    // Get tip per hour
+
     // Update storage.json
     const toWrite : string = JSON.stringify(data);
 
@@ -83,5 +92,20 @@ const saveInfo = (data : Data) : void => {
     });
 }
 
+const getTipPerHour = function(hoursWorked : number, money : number) : number {
+    return hoursWorked / money;
+}
+
+const displayMoneyOwed = (data : Data, ipt: HTMLInputElement) : void => {
+    const displayMoneyToUser = <HTMLElement> document.getElementById("displayMoneyToUser");
+
+    const empHours : number = parseFloat(ipt.value);
+    console.log(empHours * data.tipPerHour);
+    const moneyOwed : number = isNaN(empHours) ?
+        0.00 : empHours * data.tipPerHour
+
+    displayMoneyToUser.textContent = "";
+    displayMoneyToUser.innerHTML = `£${moneyOwed.toFixed(2)}`;
+}
 
 window.addEventListener('DOMContentLoaded', onReady);
